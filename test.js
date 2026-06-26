@@ -1,15 +1,4 @@
-const run1 = () => {
-    setTimeout(() => {
-        console.log("Waiting....");
-    }, 3000)
-    console.log("Hello");
+const {add, sub} = require('./operations.js')
 
-}
-
-const run2 = () => {
-    console.log("Completed");
-
-}
-
-run1()
-run2()
+console.log(add(23,45));
+console.log(sub(23,45));
