@@ -1,14 +1,16 @@
 const data = () => new Promise((resolve, reject) => {
-    const res = {
-        'name': 'Vansh',
-        'email': "vansh@gmail.com"
-    }
-    if (res) {
-        resolve(res)
-    }
-    else {
-        reject("Not Found")
-    }
+    setTimeout(() => {
+        const res = {
+            'name': 'Vansh',
+            'email': "vansh@gmail.com"
+        }
+        if (res) {
+            resolve(res)
+        }
+        else {
+            reject("Not Found")
+        }
+    }, 3000)
 })
 
 data()
@@ -20,8 +22,14 @@ data()
     })
     .then((d) => {
         console.log(d);
-
     })
     .catch((e) => {
         console.log(e);
     })
+
+const display = async () => {
+    const d = await data();
+    console.log("Completed");
+    console.log(d);
+}
+display()
